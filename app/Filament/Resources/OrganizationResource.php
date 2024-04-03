@@ -19,6 +19,10 @@ class OrganizationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
 
+    protected static ?int $navigationShort = 1;
+    
+    protected static ?string $navigatonGroup = "Configration";
+
    // these functin can disable create button:-
     // public static function canCreate(): bool
     // {
@@ -31,9 +35,11 @@ class OrganizationResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->columnSpanfull()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('information')
+                Forms\Components\RichEditor::make('information')
                     ->required()
+                    ->columnSpanfull()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('contact')
                     ->required()
@@ -45,6 +51,7 @@ class OrganizationResource extends Resource
                     ->image()
                     ->required(),
                 Forms\Components\TextInput::make('youtube')
+                    ->URL()
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('facebook')

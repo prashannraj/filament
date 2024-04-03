@@ -17,6 +17,8 @@ class YearResource extends Resource
 {
     protected static ?string $model = Year::class;
 
+    protected static ?int $navigationShort = 2;
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
