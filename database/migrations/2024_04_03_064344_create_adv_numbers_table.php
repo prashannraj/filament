@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('adv_numbers', function (Blueprint $table) {
             $table->id();
-            $table->string("number")->unique();
+            $table->string("number");
             $table->foreignId("year_id")->constrained()->casecadeOnDelete();
             $table->timestamps();
         });

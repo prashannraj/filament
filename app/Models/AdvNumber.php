@@ -18,4 +18,10 @@ class AdvNumber extends Model
     {
         return $this->belongsTo(Year::class);
     }
+
+    /**
+     * Get all of the comments for the AdvNumber
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
 }
