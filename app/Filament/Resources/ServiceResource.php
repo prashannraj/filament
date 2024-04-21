@@ -3,8 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
-use App\Filament\Resources\ServiceResource\RelationManagers;
-use App\Filament\Resources\SubServiceRelationManager;
+use App\Filament\Resources\ServiceResource\RelationManagers\SubServiceRelationManager;
 use App\Models\Service;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -64,7 +63,7 @@ class ServiceResource extends Resource
     public static function getRelations(): array
     {
         return [
-            // SubServiceRelationManager::class
+            SubServiceRelationManager::class
         ];
     }
 

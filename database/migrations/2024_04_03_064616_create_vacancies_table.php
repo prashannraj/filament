@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('vacancies', function (Blueprint $table) {
             $table->id()->unique();
             $table->foreignId("year_id")->constrained()->casecadeOnDelete();
-            $table->integer("adv_number");
+            $table->foreignId("adv_number_id")->constrained()->cascadeOnDelete();
             $table->string("service");
             $table->string("sub_service");
             $table->string("sup_service");
